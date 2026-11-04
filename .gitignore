@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+
+# Notebooks
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data: keep the raw folder in the repo, but never commit raw files
+data/raw/*
+!data/raw/.gitkeep
+*.parquet
