@@ -1,0 +1,6 @@
+-r requirements.txt
+geopandas
+shapely
+scikit-learn
+pyarrow
+jupyter
