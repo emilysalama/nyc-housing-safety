@@ -105,6 +105,7 @@ In `zip_year_integrated.csv`, each ZIP gets exactly one `borough`, taken from th
 | `h_curb_cut` | jobs with the curb cut work type \= YES |
 | `h_median_days_permit_to_signoff` | median of `days_permit_to_signoff` for New Building jobs (ZIP by year table only; NaN allowed) |
 | `t_crashes` | serious crash count |
+| `t_crashes_street` | crashes where `is_highway` is false (proposed default outcome for ZIP-level questions) |
 | `t_severe_injuries` | sum of `total_severe_injuries` |
 | `t_non_severe_injuries` | sum of `total_non_severe_injuries` |
 | `t_fatalities` | sum of `total_fatalities` |
@@ -130,14 +131,32 @@ Column order in `zip_year_integrated.csv`: `zip`, `borough`, `year`, then all `h
 - Search mode recognizes borough names, years 2022 to 2026, job-type words (new building, demolition, alteration), and severity words (fatal, severe).  
 - All charts are functions in `src/charts/qNN.py` of the form `make_fig(df) -> plotly Figure`, taking a dataframe already filtered by the shared filter in `src/filters.py`.
 
-## 11\. Open items (verify, then update this file)
+## 11. Open items (verify, then update this file)
 
-- [ ] Dedupe rule for H5 job filing numbers (check suffix pattern such as `-I1`, and whether repeats are true duplicates).  
-- [x] Crash fill rates for ZIP, latitude, longitude on the downloaded data, and spatial-join agreement with the original ZIP (target: at least 95%). 
-Verified: 13,309 usable rows after dropping 444 empty rows and 1 duplicate; ZIP present 60.7%, recoverable by coordinates 30.7%, unrecoverable 8.6%; borough present for 99.6%.
-- [ ] Which ZIP boundary file we use, and that its ZIP field matches most of H5 `postcode` values.  
-- [x] Exact H5 column names for the sidewalk shed and curb cut work types.
+- [ ] Dedupe rule for H5 job filing numbers (check the suffix pattern such as `-I1`, and whether repeats are true duplicates).
+- [x] Crash fill rates on the downloaded data. Verified: 13,309 usable rows after dropping 444 empty rows and 1 duplicate; ZIP present 60.7%, recoverable from coordinates 30.7%, unrecoverable 8.6%; borough present for 99.6%.
+- [ ] Spatial-join agreement with the original ZIP (target: at least 95%), tested on crashes that have both a ZIP and coordinates. Needs the boundary file.
+- [ ] Which ZIP boundary file we use, and that its ZIP field matches most H5 `postcode` values.
+- [x] Exact H5 column names for the sidewalk shed and curb cut work types (verified: `sidewalk_shed_work_type_`, `shed`, `curb_cut`).
+- [ ] M1: does "No Work" (11,343 rows in the raw download) count in `h_filings_total`? Proposed: no.
+- [ ] M1: does "ALT-CO - New Building with Existing Elements to Remain" (14,412 rows in the raw download) count as new building? Proposed: no. Keep `h_new_building` strictly "New Building" and note the rest as a limitation.
+
+## 12. Proposed changes (agree by [day, time], then rename this heading to "Agreed changes")
+
+- D1: add the metric `t_crashes_street` (crashes where `is_highway` is false) to both integrated tables. Use it as the default outcome for ZIP-level construction questions. `t_crashes` stays as the total.
+- D2: `coverage_report.csv` reports the share of crashes by `zip_source`, broken down by year, borough, `is_highway`, and fatal vs non-fatal.
+- D3: Q3 (fatal share) uses crashes that have a ZIP only, states the coverage gap in its caption, and adds a borough-level check.
+- D4: Q1 and Q7 show per-year location coverage next to the chart and include a check without 2025.
+- Clarification: `zip_year_integrated.csv` counts only crashes with a ZIP (original or recovered). Crashes with no ZIP appear only in `borough_month_integrated.csv`.
+
+### Findings behind these proposals (from the downloaded data)
+
+- The original ZIP was filled for only 16% of 2022 crashes, versus 68 to 80% in 2023 to 2026. Without the spatial join, 2022 would look artificially quiet.
+- After recovery, the share of crashes with a usable location is about 90% in 2022 and 2023, 88% in 2024, 97% in 2025, and 95% in 2026. Year-over-year ZIP changes can partly reflect coverage.
+- Crashes with no location are not random: about 31% involved a fatality, versus about 5% of the rest.
+- Highway crashes almost never have a ZIP (0.3%); 79% are recoverable from coordinates and 21% are unlocatable.
 
 ## Version history
 
 - v2: SIRTA (`xeqp-qz8h`) is the crash dataset; two grains (ZIP by year, borough by month); crash metrics redefined around SIRTA columns.
+- v2.1 (proposed): crash-data findings, t_crashes_street, coverage breakdowns, open decisions for H5 job types.
