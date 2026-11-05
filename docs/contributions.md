@@ -9,4 +9,4 @@ Each member updates their own row as they work. This table feeds the README.
 | M3 | | | Integration lead | Q5, Q6 | ZIP boundary file; both integrated tables; post-integration cleaning; coverage_report.csv | | Justification of join grains |
 | M4 | | | Website core | Q7, Q8 | | Dash app structure; shared filter; dropdowns; Generate Report button and callbacks | |
 | M5 | | | Search, map, and QA | Q9, Q10 | | Search mode; map components; styling; interaction testing | |
-| M6 | Emily | emilysalama | Story, documentation, delivery | Q11, Q12 | | | Repo; story section; notebook assembly; README; deployment; submission |
+| M6 | Story, documentation, delivery | Q11, Q12 | Set up the GitHub repo, notebook structure and README skeleton; ran an early test deployment on Render and deployed the site; added `src/make_dummy_data.py` (dummy files with the contract's column names) so charts could be built before the real data arrived; added and tested the Q11 and Q12 chart functions on dummy data; profiled Q12 with `cProfile` and tuned it from about 94 s to about 3 s (`n_jobs=1`, `n_repeats=5`, kept GroupKFold by ZIP and AUC scoring) |
