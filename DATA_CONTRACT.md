@@ -133,7 +133,8 @@ Column order in `zip_year_integrated.csv`: `zip`, `borough`, `year`, then all `h
 ## 11\. Open items (verify, then update this file)
 
 - [ ] Dedupe rule for H5 job filing numbers (check suffix pattern such as `-I1`, and whether repeats are true duplicates).  
-- [ ] Crash fill rates for ZIP, latitude, longitude on the downloaded data, and spatial-join agreement with the original ZIP (target: at least 95%).  
+- [x] Crash fill rates for ZIP, latitude, longitude on the downloaded data, and spatial-join agreement with the original ZIP (target: at least 95%). 
+Verified: 13,309 usable rows after dropping 444 empty rows and 1 duplicate; ZIP present 60.7%, recoverable by coordinates 30.7%, unrecoverable 8.6%; borough present for 99.6%.
 - [ ] Which ZIP boundary file we use, and that its ZIP field matches most of H5 `postcode` values.  
 - [x] Exact H5 column names for the sidewalk shed and curb cut work types.
 
