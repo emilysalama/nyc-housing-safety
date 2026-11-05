@@ -31,6 +31,13 @@ from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
 import pandas as pd
+# Use the operating system's certificate store for HTTPS. This fixes
+# "CERTIFICATE_VERIFY_FAILED" errors on some Windows machines and networks.
+try:
+    import truststore
+    truststore.inject_into_ssl()
+except ImportError:
+    pass
 
 # ---------------------------------------------------------------------------
 # Paths

@@ -4,3 +4,4 @@ shapely
 scikit-learn
 pyarrow
 jupyter
+truststore
