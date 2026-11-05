@@ -135,7 +135,7 @@ Column order in `zip_year_integrated.csv`: `zip`, `borough`, `year`, then all `h
 - [ ] Dedupe rule for H5 job filing numbers (check suffix pattern such as `-I1`, and whether repeats are true duplicates).  
 - [ ] Crash fill rates for ZIP, latitude, longitude on the downloaded data, and spatial-join agreement with the original ZIP (target: at least 95%).  
 - [ ] Which ZIP boundary file we use, and that its ZIP field matches most of H5 `postcode` values.  
-- [ ] Exact H5 column names for the sidewalk shed and curb cut work types.
+- [x] Exact H5 column names for the sidewalk shed and curb cut work types.
 
 ## Version history
 
