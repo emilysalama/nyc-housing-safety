@@ -85,7 +85,7 @@ In `zip_year_integrated.csv`, each ZIP gets exactly one `borough`, taken from th
 - Standardize `crash_time` to `HH:MM`; derive `crash_hour` and `crash_weekday`.  
 - Clean `zipcode` to 5 digits and name it `zip`. If missing but coordinates exist, assign the ZIP by spatial join, and record `zip_source` as `original`, `spatial_join`, or `missing`.  
 - Fill a missing borough the same way, with a `borough_source` column.  
-- Derive `is_highway` (a highway reference marker is present) and `is_repeat_location` (`similar_fatalities_severe` of at least 1; NaN stays NaN, not 0).  
+- Derive `is_highway` (a highway reference marker is present; do not infer from street names) and `is_repeat_location` (`similar_fatalities_severe` of at least 1; NaN stays NaN, not 0).  
 - Set coordinates outside the NYC bounding box to NaN.
 
 ### Required columns in `crash_clean.csv`
@@ -141,12 +141,12 @@ Column order in `zip_year_integrated.csv`: `zip`, `borough`, `year`, then all `h
 - [ ] M1: does "No Work" (11,343 rows in the raw download) count in `h_filings_total`? Proposed: no.
 - [ ] M1: does "ALT-CO - New Building with Existing Elements to Remain" (14,412 rows in the raw download) count as new building? Proposed: no. Keep `h_new_building` strictly "New Building" and note the rest as a limitation.
 
-## 12. Proposed changes (agree by [day, time], then rename this heading to "Agreed changes")
+## 12. Agreed changes (decided [5/11/2026])
 
-- D1: add the metric `t_crashes_street` (crashes where `is_highway` is false) to both integrated tables. Use it as the default outcome for ZIP-level construction questions. `t_crashes` stays as the total.
-- D2: `coverage_report.csv` reports the share of crashes by `zip_source`, broken down by year, borough, `is_highway`, and fatal vs non-fatal.
-- D3: Q3 (fatal share) uses crashes that have a ZIP only, states the coverage gap in its caption, and adds a borough-level check.
-- D4: Q1 and Q7 show per-year location coverage next to the chart and include a check without 2025.
+- D1: add `t_crashes_street` (crashes where `is_highway` is false) to both integrated tables. It is the default crash outcome for ZIP-level construction questions; `t_crashes` stays as the total. `is_highway` is true when the highway reference marker is present (1,052 of 13,309 crashes, 7.9%), so `t_crashes_street` keeps about 92% of crashes. About 200 more crashes have highway-style street names but no marker; we do not reclassify them, because many are local parkways, so some highway crashes remain in the street count.
+- D2: `coverage_report.csv` reports, for each of year, borough, `is_highway`, and fatal vs non-fatal: the number of crashes and the share with `zip_source` = original, spatial_join, and missing.
+- D3: Q3 (fatal share by ZIP) uses crashes that have a ZIP only, reports in its caption the exact share of fatal crashes without a ZIP (taken from `coverage_report.csv`), and adds a borough-level version of the chart as a check.
+- D4: Q1 and Q7 show per-year location coverage next to the chart and report whether the result changes when 2025 is excluded.
 - Clarification: `zip_year_integrated.csv` counts only crashes with a ZIP (original or recovered). Crashes with no ZIP appear only in `borough_month_integrated.csv`.
 
 ### Findings behind these proposals (from the downloaded data)
