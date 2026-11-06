@@ -6,7 +6,7 @@ from dash import Dash, html, dcc, Input, Output, State
 
 from src.filters import filter_df, ALL
 from src.dummy_data import BOROUGHS, H_COLS, T_COLS
-from src.charts import q07, q08
+from src.charts import q07, q08, q11, q12
 from src.theme import style_fig
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -27,6 +27,24 @@ TABLES = {
     "sites": load("housing_sites_points.csv", dtype={"zip": str}),
 }
 
+Q11_BAD_METRIC = "h_median_days_permit_to_signoff"  # a median cannot be summed across years into tiers
+
+
+def q11_metric(h_col):
+    """Q11 tiers follow the selected housing measure, except the median-days column."""
+    return "h_new_building" if h_col == Q11_BAD_METRIC else h_col
+
+
+_q12_cache = {}
+
+
+def q12_figure(zip_year):
+    """Fit the Q12 model once and reuse it (it ignores the Borough and Year filters)."""
+    if "fig" not in _q12_cache:
+        _q12_cache["fig"] = q12.make_fig(zip_year)
+    return _q12_cache["fig"]
+
+
 # Chart registry. Teammates add one entry.
 #   fn(tables, housing_col, transport_col) -> figure; tables is a dict (filtered or not, see 'filtered')
 #   needs: table names that must exist, otherwise the chart shows a message
@@ -38,12 +56,14 @@ CHARTS = [
     dict(id="q08", title="Q8 Street-facing filings", needs=["zip_year"], filtered=True,
          fn=lambda T, h, t: q08.make_fig(T["zip_year"], t),
          hint="Taller bars mean that filing type moves more closely with serious crashes across ZIP codes."),
-    # Q11 example (exception to make_fig(df)):
-    # dict(id="q11", title="Q11 ...", needs=["crashes", "zip_year"], filtered=True,
-    #      fn=lambda T, h, t: q11.make_fig(q11.prepare(T["crashes"], T["zip_year"])), hint="..."),
-    # Q12 example (ignores filters, needs scikit-learn):
-    # dict(id="q12", title="Q12 ...", needs=["zip_year"], filtered=False,
-    #      fn=lambda T, h, t: q12.make_fig(T["zip_year"]), hint="..."),
+    dict(id="q11", title="Q11 When crashes happen", needs=["crashes", "zip_year"], filtered=True,
+         fn=lambda T, h, t: q11.make_fig(
+             q11.prepare(T["crashes"], T["zip_year"], metric=q11_metric(h)),
+             metric_label=q11_metric(h)[2:].replace("_", " ")),
+         hint="Each panel shows the hour and weekday of serious crashes in ZIPs with low, medium, or high levels of the selected housing measure. Darker means a bigger share of that group's crashes. Crashes with a ZIP only; highway crashes excluded."),
+    dict(id="q12", title="Q12 What flags high-crash ZIPs", needs=["zip_year"], filtered=False,
+         fn=lambda T, h, t: q12_figure(T["zip_year"]),
+         hint="A random forest tries to flag ZIP-years in the top quarter for street crashes, and the bars show which housing features help. It always uses street crashes, whatever the crash measure. Bars near zero add little. Exploratory, not causal."),
 ]
 
 def options(values):
