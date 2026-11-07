@@ -30,3 +30,18 @@ The project requires us to record every prompt we used at any step. Add a row ea
 | M6 (Emily) | 2026-11-04 | docs: README | https://nyc-housing-safety.onrender.com/ also the command prompt isnt appearing after copy pasting the readme skeleton | Claude |
 | M6 (Emily) | 2026-11-04 | docs: prompt log | After it’s created, add your own rows from this conversation (your first prompts about the project goal, task division, dataset choice, and so on), copying the exact text from the chat. you sent me this message im going back to it now. where do i put these: [followed by five earlier prompts pasted in quotes] | Claude |
 | M6 (Emily) | 2026-11-04 | docs: prompt log | Copy each prompt exactly as you typed it, typos included. The handout asks for the prompts used, so editing them makes the log less honest. could you please send me the prompts i need to add? this is the file so far: [pasted contents of docs/prompt_log.md omitted] | Claude |
+
+| M5 (hallamnabil) | 2026-11-08 | Planning: what Member 5 must do | did you read the chat link i sent you and the project description i am member 5 that is asking what do i need to do (attached Data_Catalog.pdf and Project_Description.pdf) | Claude |
+| M5 (hallamnabil) | 2026-11-08 | Planning: review of contract and setup | check everythingg i uploaded here. I am MEMBER 5 (attached the data contract, setup checklist, Phase 1 plan and repo link) | Claude |
+| M5 (hallamnabil) | 2026-11-08 | Planning: getting started | members 1 to 3 are supposed to have finished their parts now what do i need to do to start | Claude |
+| M5 (hallamnabil) | 2026-11-08 | docs: environment | where do i work on all that on vs code or what? | Claude |
+| M5 (hallamnabil) | 2026-11-08 | docs: environment | i will use colab | Claude |
+| M5 (hallamnabil) | 2026-11-08 | chart: Q9 map key | Tell M5 that the ZIP property in the geojson is zcta5, so Q9 needs featureidkey="properties.zcta5" with ZIPs as 5-digit strings.<br>this is i think a rule to follow please let me know what i should do with it | Claude |
+| M5 (hallamnabil) | 2026-11-08 | Planning: setup steps | okay now give me step by step what to do after cloning the git | Claude |
+| M5 (hallamnabil) | 2026-11-08 | chart: Q9 | this is the output (attached screenshot of the Q9 map) | Claude |
+| M5 (hallamnabil) | 2026-11-08 | chart: Q10 | i pasted the outputs as copy of cell output as screenshot doesnt show all the details but the maps are drawn and the info shows when i hover over parts of it (attached the Q10 chart output) | Claude |
+| M5 (hallamnabil) | 2026-11-08 | docs: pull request | i shouldnt push to the main directly or anything my push should be reviewed by the git owner first | Claude |
+| M5 (hallamnabil) | 2026-11-08 | docs: git setup | Author identity unknown (attached the git error output) | Claude |
+| M5 (hallamnabil) | 2026-11-08 | docs: git push | it asks me to put the token is this the token? | Claude |
+| M5 (hallamnabil) | 2026-11-08 | docs: pull request | give me what to write exactly and what to do after it till end | Claude |
+| M5 (hallamnabil) | 2026-11-08 | docs: contributions and prompt log | what to put | Claude |
