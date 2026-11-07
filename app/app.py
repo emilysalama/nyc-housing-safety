@@ -12,8 +12,8 @@ from src.theme import style_fig
 ROOT = Path(__file__).resolve().parent.parent
 
 def load(name, **kw):
-    """Load data/clean/<name>, else data/dummy/<name>, else None (so the app always starts)."""
-    for folder in ("clean", "dummy"):
+    """Load data/clean/<name>, else None (so the app always starts)."""
+    for folder in ("clean",):
         path = ROOT / "data" / folder / name
         if path.exists():
             return pd.read_csv(path, **kw)
