@@ -6,7 +6,7 @@ from dash import Dash, html, dcc, Input, Output, State
 
 from src.filters import filter_df, ALL
 from src.dummy_data import BOROUGHS, H_COLS, T_COLS
-from src.charts import q07, q08, q11, q12
+from src.charts import q07, q08, q09, q10, q11, q12
 from src.theme import style_fig
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -56,6 +56,12 @@ CHARTS = [
     dict(id="q08", title="Q8 Street-facing filings", needs=["zip_year"], filtered=True,
          fn=lambda T, h, t: q08.make_fig(T["zip_year"], t),
          hint="Taller bars mean that filing type moves more closely with serious crashes across ZIP codes."),
+    dict(id="q09", title="Q9 Where construction and crashes overlap", needs=["zip_year"], filtered=True,
+         fn=lambda T, h, t: q09.make_fig(T["zip_year"], h, t),
+         hint="Each ZIP code is colored by two things at once: how much of the selected housing measure it has (left to right in the legend) and how much of the selected crash measure (bottom to top). Dark blue means high on both. Tiers are thirds of the ZIPs shown, so they shift with the filters. ZIPs without a boundary polygon are not drawn."),     
+    dict(id="q10", title="Q10 Long builds and crashes", needs=["zip_year"], filtered=True,
+         fn=lambda T, h, t: q10.make_fig(T["zip_year"], t),
+         hint="Each dot is a ZIP code. Further right means new buildings there took longer from permit to sign-off, higher means more of the selected crash measure, and bigger dots mean more new-building filings. Exploratory, not causal."),
     dict(id="q11", title="Q11 When crashes happen", needs=["crashes", "zip_year"], filtered=True,
          fn=lambda T, h, t: q11.make_fig(
              q11.prepare(T["crashes"], T["zip_year"], metric=q11_metric(h)),
