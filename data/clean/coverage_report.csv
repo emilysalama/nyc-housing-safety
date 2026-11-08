@@ -1,0 +1,17 @@
+dimension,group,total_crashes,original_count,original_pct,spatial_join_count,spatial_join_pct,missing_count,missing_pct,fatal_crashes,fatal_crashes_missing_zip,fatal_crashes_missing_zip_pct,housing_rows_dropped_zip_year,crash_rows_dropped_zip_year,unverified_zip_10000_crashes
+overall,all,13309,8072,60.65,4057,30.48,1180,8.87,1046,354,33.84,517.0,1147.0,44.0
+year,2022,2879,469,16.29,2107,73.19,303,10.52,245,39,15.92,,,
+year,2023,3016,2055,68.14,650,21.55,311,10.31,237,105,44.3,,,
+year,2024,3116,2180,69.96,555,17.81,381,12.23,232,93,40.09,,,
+year,2025,2947,2367,80.32,464,15.74,116,3.94,211,64,30.33,,,
+year,2026,1351,1001,74.09,281,20.8,69,5.11,121,53,43.8,,,
+borough,Bronx,2616,1522,58.18,857,32.76,237,9.06,200,75,37.5,,,
+borough,Brooklyn,3954,2601,65.78,1125,28.45,228,5.77,305,62,20.33,,,
+borough,Manhattan,2733,1746,63.89,709,25.94,278,10.17,173,48,27.75,,,
+borough,Queens,3328,1907,57.3,1080,32.45,341,10.25,304,134,44.08,,,
+borough,Staten Island,669,296,44.25,286,42.75,87,13.0,58,29,50.0,,,
+borough,missing,9,0,0.0,0,0.0,9,100.0,6,6,100.0,,,
+is_highway,highway,1052,3,0.29,823,78.23,226,21.48,164,125,76.22,,,
+is_highway,street,12257,8069,65.83,3234,26.38,954,7.78,882,229,25.96,,,
+fatal_status,fatal,1046,515,49.24,177,16.92,354,33.84,1046,354,33.84,,,
+fatal_status,nonfatal,12263,7557,61.62,3880,31.64,826,6.74,0,0,,,,
