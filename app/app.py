@@ -8,6 +8,7 @@ from src.filters import filter_df, ALL
 from src.dummy_data import BOROUGHS, H_COLS, T_COLS
 from src.charts import q07, q08, q09, q10, q11, q12
 from src.theme import style_fig
+from src.search import parse_query
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -101,6 +102,7 @@ app.layout = html.Div([
     html.Div([
         html.Div([
             *field("Search", dcc.Input(id="search", placeholder="Brooklyn 2022 new buildings")),
+            html.Div(id="search_note", className="hint"),
             *field("Borough", dcc.Dropdown(id="borough", options=options([ALL] + BOROUGHS), value=ALL, clearable=False)),
             *field("Year", dcc.Dropdown(id="year", options=options([ALL, 2022, 2023, 2024, 2025]), value=ALL, clearable=False)),
             *field("Housing measure", dcc.Dropdown(id="h_metric", options=options(H_COLS), value="h_new_building", clearable=False)),
@@ -145,6 +147,25 @@ def generate_report(_, borough, year, h_metric, t_metric):
               prevent_initial_call=True)
 def reset_filters(_):
     return ALL, ALL, "h_new_building", "t_crashes_street", ""
+
+@app.callback(
+    Output("borough", "value", allow_duplicate=True),
+    Output("year", "value", allow_duplicate=True),
+    Output("h_metric", "value", allow_duplicate=True),
+    Output("t_metric", "value", allow_duplicate=True),
+    Output("search_note", "children"),
+    Input("search", "n_submit"),
+    State("search", "value"),
+    State("borough", "value"), State("year", "value"),
+    State("h_metric", "value"), State("t_metric", "value"),
+    prevent_initial_call=True,
+)
+def apply_search(_, text, borough, year, h_metric, t_metric):
+    """Press Enter in the search box to set the dropdowns; Generate Report then draws the charts."""
+    p = parse_query(text or "")
+    # None means "not mentioned", so keep whatever the dropdown already has.
+    return (p["borough"] or borough, p["year"] or year, p["h_metric"] or h_metric,
+            p["t_metric"] or t_metric, " ".join(p["notes"]))
 
 if __name__ == "__main__":
     app.run(debug=True)
