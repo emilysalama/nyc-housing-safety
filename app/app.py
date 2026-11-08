@@ -1,31 +1,40 @@
-"""Dash entry point. Run from repo root: python -m app.app  (gunicorn app.app:server)"""
+"""Dash entry point. Run from repo root: python -m app.app  (gunicorn app.app:server)
+Set USE_DUMMY=1 to fall back to data/dummy for LOCAL testing only. Never set it on Render."""
+import os
 from pathlib import Path
 import pandas as pd
 import plotly.graph_objects as go
 from dash import Dash, html, dcc, Input, Output, State
 
 from src.filters import filter_df, ALL
-from src.dummy_data import BOROUGHS, H_COLS, T_COLS
+from src.constants import BOROUGHS, H_COLS, T_COLS
 from src.charts import q07, q08
 from src.theme import style_fig
 
 ROOT = Path(__file__).resolve().parent.parent
+USE_DUMMY = os.environ.get("USE_DUMMY") == "1"
 
-def load(name, **kw):
-    """Load data/clean/<name>, else data/dummy/<name>, else None (so the app always starts)."""
-    for folder in ("clean", "dummy"):
+SOURCES = {}  # which folder each table really came from, so the banner never lies
+
+def load(key, name, **kw):
+    """Load data/clean/<name>. With USE_DUMMY=1 a dummy file is preferred when one exists
+    (local testing only). Records the source folder in SOURCES. Returns None if not found."""
+    folders = ("dummy", "clean") if USE_DUMMY else ("clean",)
+    for folder in folders:
         path = ROOT / "data" / folder / name
         if path.exists():
-            return pd.read_csv(path, **kw)
+            SOURCES[key] = folder
+            return pd.read_csv(path, low_memory=False, **kw)
     return None
 
 # M3's confirmed tables, plus the extra tables Q2/Q11 need (None until the files exist).
 TABLES = {
-    "zip_year": load("zip_year_integrated.csv", dtype={"zip": str}),
-    "borough_month": load("borough_month_integrated.csv"),
-    "crashes": load("crash_clean.csv", dtype={"zip": str}),
-    "sites": load("housing_sites_points.csv", dtype={"zip": str}),
+    "zip_year": load("zip_year", "zip_year_integrated.csv", dtype={"zip": str}),
+    "borough_month": load("borough_month", "borough_month_integrated.csv"),
+    "crashes": load("crashes", "crash_clean.csv", dtype={"zip": str}),
+    "sites": load("sites", "housing_sites_points.csv", dtype={"zip": str}),
 }
+DUMMY_TABLES = [k for k, v in SOURCES.items() if v == "dummy"]  # empty on Render
 
 # Chart registry. Teammates add one entry.
 #   fn(tables, housing_col, transport_col) -> figure; tables is a dict (filtered or not, see 'filtered')
@@ -41,7 +50,7 @@ CHARTS = [
     # Q11 example (exception to make_fig(df)):
     # dict(id="q11", title="Q11 ...", needs=["crashes", "zip_year"], filtered=True,
     #      fn=lambda T, h, t: q11.make_fig(q11.prepare(T["crashes"], T["zip_year"])), hint="..."),
-    # Q12 example (ignores filters, needs scikit-learn):
+    # Q12 example (ignores filters, needs scikit-learn; cache the result so it is computed once):
     # dict(id="q12", title="Q12 ...", needs=["zip_year"], filtered=False,
     #      fn=lambda T, h, t: q12.make_fig(T["zip_year"]), hint="..."),
 ]
@@ -83,6 +92,8 @@ app.layout = html.Div([
             html.Button("Reset filters", id="reset", n_clicks=0, className="btn btn-ghost"),
         ], className="panel"),
         html.Div([
+            html.Div(f"Test mode: invented dummy data in use for {', '.join(DUMMY_TABLES)}." if DUMMY_TABLES else "",
+                     className="summary", style={} if DUMMY_TABLES else {"display": "none"}),
             html.Div(id="summary", className="summary"),
             *[chart_card(c) for c in CHARTS],
             html.Div(id="story"),  # M6's story section goes here
