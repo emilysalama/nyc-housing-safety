@@ -64,7 +64,7 @@ def make_coverage_fig(path="data/clean/coverage_report.csv"):
     fig.update_layout(barmode="stack",
                       title=dict(text="Q7 data coverage: where each crash's ZIP came from", y=0.95),
                       yaxis_title="% of crashes", xaxis_title="", yaxis_range=[0, 100],
-                      height=720, margin=dict(t=130, b=170, l=70, r=40),
+                      height=720, margin=dict(t=130, b=240, l=70, r=40),
                       legend=dict(orientation="h", x=0, y=1.02, xanchor="left", yanchor="bottom",
                                   entrywidthmode="pixels", entrywidth=230))
     fig.update_xaxes(type="category")
