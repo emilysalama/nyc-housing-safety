@@ -42,17 +42,21 @@ def assign_construction_tier(zip_year_df: pd.DataFrame, metric: str = "h_new_bui
     return tiers.astype(str).rename("construction_tier")
 
 
+
 def prepare(crash_df: pd.DataFrame, zip_year_df: pd.DataFrame,
             metric: str = "h_new_building", street_only: bool = True) -> pd.DataFrame:
-    
     """Attach each crash's ZIP construction tier.
 
-    Drops crashes without a ZIP, hour or weekday. street_only=True also drops highway
-    crashes (agreed default outcome, DATA_CONTRACT D1).
+    Drops crashes without a ZIP, hour or weekday, and keeps only crashes from the years
+    present in zip_year_df (2022 to 2025). street_only=True also drops highway crashes
+    (agreed default outcome, DATA_CONTRACT D1).
     """
     crashes = crash_df.dropna(subset=["zip", "crash_hour", "crash_weekday"]).copy()
     if street_only and "is_highway" in crashes.columns:
         crashes = crashes[~crashes["is_highway"].fillna(False).astype(bool)]
+    # Use only the years in the ZIP-year table (the complete years 2022 to 2025,
+    # DATA_CONTRACT section 2); 2026 is a partial year and is not in that table.
+    crashes = crashes[crashes["year"].isin(zip_year_df["year"].unique())]
     tiers = assign_construction_tier(zip_year_df, metric)
     crashes["zip"] = crashes["zip"].astype(str)
     tier_table = tiers.rename_axis("zip").reset_index()
