@@ -6,7 +6,7 @@ from dash import Dash, html, dcc, Input, Output, State
 
 from src.filters import filter_df, ALL
 from src.dummy_data import BOROUGHS, H_COLS, T_COLS
-from src.charts import q07, q08, q09, q10, q11, q12
+from src.charts import q01, q02, q07, q08, q09, q10, q11, q12
 from src.theme import style_fig
 from src.search import parse_query
 
