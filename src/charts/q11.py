@@ -95,7 +95,7 @@ def make_fig(df: pd.DataFrame, metric_label: str = "new-building filings") -> go
     matrices = _heatmap_matrices(df)
     zmax = max(float(s.to_numpy().max()) for _, s, _ in matrices.values())
 
-    titles = [f"{t} construction (n = {matrices[t][2]:,} crashes)" for t in TIER_ORDER]
+    titles = [f"{t} (n={matrices[t][2]:,})" for t in TIER_ORDER]
     fig = make_subplots(rows=1, cols=3, subplot_titles=titles, shared_yaxes=True,
                         horizontal_spacing=0.03)
 
@@ -115,12 +115,12 @@ def make_fig(df: pd.DataFrame, metric_label: str = "new-building filings") -> go
         title=dict(text="When do serious crashes happen? Hour and weekday, by how much "
                         "construction the ZIP has",
                    x=0.01),
-        height=430, margin=dict(t=95, b=95, l=70, r=30),
+        height=560, margin=dict(t=100, b=145, l=70, r=50),
         annotations=list(fig.layout.annotations) + [dict(
              text=("Each panel shows the share of that group's own crashes. ZIPs are split into "
                   f"thirds by {metric_label} in the selected data.<br>Crashes with a ZIP "
                   "only; highway crashes excluded by default; association, not causation."),
-            x=0, y=-0.30, xref="paper", yref="paper", showarrow=False, xanchor="left",
+            x=0, y=-0.16, xref="paper", yref="paper", showarrow=False, xanchor="left",
             font=dict(size=11))],
     )
     return fig
