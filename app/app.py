@@ -173,7 +173,55 @@ app.layout = html.Div([
         html.Div([
             html.Div(id="summary", className="summary"),
             *[chart_card(c) for c in CHARTS],
-            html.Div(id="story"),  # M6's story section goes here
+            html.Div([
+                html.H2("Our Data Story"),
+                html.H3("Does housing activity go hand in hand with serious street crashes?"),
+                html.P(
+                    "We combined NYC DOB NOW housing filings with DOT SIRTA "
+                    "serious crash records to explore how development activity "
+                    "and road safety relate across neighborhoods and time."
+                ),
+
+                html.H3("What did we discover?"),
+                html.Ul([
+                    html.Li(
+                        "Monthly patterns: Housing filings and serious crashes "
+                        "show weak same-month correlations across NYC boroughs, "
+                        "with no consistent lag relationship."
+                    ),
+                    html.Li(
+                        "ZIP-level relationship: Across 226 ZIP codes, housing filings "
+                        "and serious crash records have a moderate positive association "
+                        "(Pearson r = 0.538; R-squared = 0.290)."
+                    ),
+                    html.Li(
+                        "Crash timing: Low-, medium-, and high-construction ZIPs "
+                        "show broadly similar time-of-day crash patterns."
+                    ),
+                    html.Li(
+                        "Predictive model: A ZIP-grouped random forest achieved "
+                        "a mean ROC AUC of 0.899. Total housing filings was "
+                        "the strongest predictive feature."
+                    )
+                ]),
+
+                html.H3("What are the limitations?"),
+                html.P(
+                    "Housing filings are paperwork, not proof of active construction. "
+                    "SIRTA records cover a subset of serious crashes, and some crashes "
+                    "cannot be located accurately by ZIP. Population, traffic exposure, "
+                    "and road characteristics are not fully controlled for. "
+                    "These findings show associations, not causation."
+                ),
+
+                html.H3("Why does this matter for NYC?"),
+                html.P(
+                    "These results can help city planners and transportation "
+                    "safety teams identify neighborhoods that deserve closer "
+                    "investigation. The dashboard is a tool for exploring patterns, "
+                    "not for concluding that construction causes crashes."
+                )
+            ], id="story", className="card"),
         ]),
     ], className="layout"),
 ])
