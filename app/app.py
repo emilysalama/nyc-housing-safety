@@ -102,7 +102,7 @@ def field(label, component):
     return [html.Label(label), component]
 
 def chart_card(c):
-   note = "" if c["filtered"] or c["id"] == "q01" else " This chart ignores the Borough and Year filters."
+    note = "" if c["filtered"] or c["id"] == "q01" else " This chart ignores the Borough and Year filters."
     return html.Div([html.H3(c["title"]), html.P(c["hint"] + note, className="hint"),
                      dcc.Loading(dcc.Graph(id=c["id"], config={"displaylogo": False}), type="dot", color="#0039A6")],
                     className="card")
