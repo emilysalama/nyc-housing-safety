@@ -113,3 +113,169 @@ The project requires us to record every prompt we used at any step. Add a row ea
 | M4 (AhmedSameh16003382) | 2026-11-08 | integration: testing M3 files | (pasted the diff output showing the h_* columns changed in borough_month_integrated.csv) | Claude |
 | M4 (AhmedSameh16003382) | 2026-11-08 | docs: notebook | lets do my notebook tell me what to do | Claude |
 | M4 (AhmedSameh16003382) | 2026-11-09 | docs: contributions and prompt log | yes | Claude |
+| M6 (Emily) | 2026-11-09 | docs: submission requirements | how do i upload it here | ChatGPT |
+| M6 (Emily) | 2026-11-09 | docs: master notebook | ill add member 5's section after you check. | ChatGPT |
+| M6 (Emily) | 2026-11-09 | docs: integration notebook | lets do this now | ChatGPT |
+| M6 (Emily) | 2026-11-09 | docs: Q9 and Q10 notebook | im not sure all this is necessary to give you but this is whatthey sent me. should i just use what you gave me to add? | ChatGPT |
+| M6 (Emily) | 2026-11-09 | chart: Q9 and Q10 captions | the captions are cut off. also, im supposed to fill in the rest of the placeholders in the notebook so lets do that next. firsttellme what i have left | ChatGPT |
+| M6 (Emily) | 2026-11-09 | docs: M1 and M2 integration planning | yay captions gone lets move on tom1 m2 sections. will it be better if i wait for their data? i dont want to rush and make the data i input low quality | ChatGPT |
+| M6 (Emily) | 2026-11-09 | docs: dataset overview | ok great lets do this , their data will be here shortly. lets finish section 2 and then take a look at m1 an m2 sections after they send their parts that we will then use to fill in the missing placeholders | ChatGPT |
+| M6 (Emily) | 2026-11-09 | docs: dataset availability | theyre already supposd to have sent it/ its supposed to be in the repo | ChatGPT |
+| M6 (Emily) | 2026-11-09 | docs: dataset reproducibility | ok so what do i do now while i wait form membrs 1 and 2 to reply? also should i be stressed about the member 1 dataset not in repo? | ChatGPT |
+| M6 (Emily) | 2026-11-09 | docs: prompt log | ok i committed the notebook like you told me to. about the prompt log. i'd like you to send me member 3's ai prompts and then add some of mine | ChatGPT |
+| M2 (Adala) | 2026-11-05 | Planning: project and role | this is our project we are 6 members with 12 questions and i am member 2 [pasted Data_Catalog.pdf, Project_Description.pdf, the roles, the 12 questions, the data contract and the load script omitted] | Claude |
+| M2 (Adala) | 2026-11-05 | Planning: dependencies | i depend on any other member ??? | Claude |
+| M2 (Adala) | 2026-11-05 | Planning: step-by-step mode | okey so lets start with my part step by step do not move to next until i tell u but first i will share with you what send in our group [pasted group message omitted] | Claude |
+| M2 (Adala) | 2026-11-05 | EDA: loading the data | what to do after i open this page ? | Claude |
+| M2 (Adala) | 2026-11-05 | EDA: loading the data | wait where to run and how tell me each step in details please | Claude |
+| M2 (Adala) | 2026-11-05 | docs: repo setup | emily sent a repo how to use it and when ?also can i finish my part in 1 hour or wait any other member ?? | Claude |
+| M2 (Adala) | 2026-11-05 | docs: repo setup | wait step by step do not move next until i tell u | Claude |
+| M2 (Adala) | 2026-11-05 | docs: repo setup | I committed on the main directly(no need for branch) member 1 sent to us | Claude |
+| M2 (Adala) | 2026-11-05 | docs: repo setup | what you’ve already cloned it means ? where to start i sent u screenshoot | Claude |
+| M2 (Adaal) | 2026-11-05 | docs: repo setup | i want to do my own branch more safety | Claude |
+| M2 (Adala) | 2026-11-05 | docs: repo setup | what is that? can i use vs? | Claude |
+| M2 (Adala) | 2026-11-05 | docs: repo setup | Current step: still Step 1, get the repo onto your computer. how how ?? | Claude |
+| M2 (Adala) | 2026-11-05 | docs: repo setup | how to close this and open new one ? | Claude |
+| M2 (Adala) | 2026-11-05 | docs: repo setup | wait you confused me tell me how to download emily's repo i need to start my part noww | Claude |
+| M2 (Adala) | 2026-11-05 | docs: repo setup | first should i create my branch now ? | Claude |
+| M2 (Adala) | 2026-11-05 | docs: repo setup | Not yet, and there’s a catch: you can’t create a branch right now, because you downloaded a ZIP, not a clone. A ZIP folder has no Git history, can we fix this step insted all of that ? | Claude |
+| M2 (Adala) | 2026-11-05 | docs: repo setup | close the old one ? | Claude |
+| M2 (Adala) | 2026-11-05 | docs: pull request | dont forget i have to send to emily to merge with main | Claude |
+| M2 (Adala) | 2026-11-05 | docs: repo setup | do not use any force command | Claude |
+| M2 (Adala) | 2026-11-05 | docs: repo setup | done? | Claude |
+| M2 (Adala) | 2026-11-05 | docs: repo setup | now ? | Claude |
+| M2 (Adala) | 2026-11-05 | EDA: environment | Open the terminal in VS Code with **Ctrl + ** (the key above Tab). Check that the path ends with nyc-housing-safety`. you mean open new terminal | Claude |
+| M2 (Adala) | 2026-11-05 | EDA: environment | omg can we dont do all of that ? | Claude |
+| M2 (Adala) | 2026-11-05 | EDA: environment | can i share it with the others then ? | Claude |
+| M2 (Adala) | 2026-11-05 | docs: pull request | how will i share this with them on git hub ?member 4 send me | Claude |
+| M2 (Adala) | 2026-11-05 | EDA: environment | complete on vs or we can complete on colab ? | Claude |
+| M2 (Adala) | 2026-11-05 | cleaning: checking my work | what i finished until now ? | Claude |
+| M2 (Adala) | 2026-11-05 | cleaning: checking my work | wait did i work correctly now explain using the requirments | Claude |
+| M2 (Adala) | 2026-11-05 | docs: pull request | you mean this ? | Claude |
+| M2 (Adala) | 2026-11-05 | docs: pull request | lets start with option2 | Claude |
+| M2 (Adala) | 2026-11-05 | docs: pull request | no no i have to finish now | Claude |
+| M2 (Adala) | 2026-11-05 | docs: pull request | complete from where we stop the last thing in the terminal is PS C:\Users\Nihal\Documents\nyc-housing-safety> git status [pasted terminal output omitted] | Claude |
+| M2 (Adala) | 2026-11-05 | docs: pull request | what to do now ? | Claude |
+| M2 (Adala) | 2026-11-05 | docs: pull request | are you sure that i am working correctly before emily merge my branch to ignore any errors and problems ? | Claude |
+| M2 (Adala) | 2026-11-05 | docs: pull request | lets complete the PR step and tell me what i finish from my part | Claude |
+| M2 (Adala) | 2026-11-05 | Planning: dependencies | so before PR should i wait for member 3 ? | Claude |
+| M2 (Adala) | 2026-11-05 | docs: message to teammate | send me a messege to send to member 3 | Claude |
+| M2 (Adala) | 2026-11-05 | Planning: dependencies | i do not undwerstand why i can not move to this step Friday evening should i wait something ? | Claude |
+| M2 (Adala) | 2026-11-05 | Planning: dependencies | first do not confused me i want to finish my part the part that does not depend on the other's part mark the points that depends on other and if the PR can sent now (others want it) lets send it to emily | Claude |
+| M2 (Adala) | 2026-11-05 | docs: message to teammate | send to member3 that (i am waiting for nyc_zip_boundaries.geojson to complete my part )right? | Claude |
+| M2 (Adala) | 2026-11-05 | docs: message to teammate | member 3 asked me that she did not understand i want from her anything from her part in one line what to send to her | Claude |
+| M2 (Adala) | 2026-11-05 | docs: message to teammate | this file nyc_zip_boundaries.geojson send it to me (should i send her like this ) | Claude |
+| M2 (Adala) | 2026-11-05 | integration: ZIP boundary file | member 3 sent | Claude |
+| M2 (Adala) | 2026-11-05 | Planning: dependencies | Can i complete all my part today after member 3 sent the zip file? SIRTA step 1 how i dont remeber that i do it if i dont is my PR wrong ?m3 asked me that i have to share with her file like m1 do which one she means? | Claude |
+| M2 (Adala) | 2026-11-05 | integration: sharing files | what m1 share | Claude |
+| M2 (Adala) | 2026-11-05 | integration: sharing files | why not | Claude |
+| M2 (Adala) | 2026-11-05 | integration: ZIP boundary file | she shared me this before i send her the csv file is that allowed ? | Claude |
+| M2 (Adala) | 2026-11-06 | integration: ZIP boundary file | the file that m3 shared with me is fine or i have to tell her to fix smthg before i start completing my part | Claude |
+| M2 (Adala) | 2026-11-06 | integration: ZIP boundary file | : 1) please push it to data/clean/nyc_zip_boundaries.geojson <br><br>i prefer to do it by myself or should she ? | Claude |
+| M2 (Adala) | 2026-11-06 | Planning: dependencies | you confused me what should i do now | Claude |
+| M2 (Adala) | 2026-11-06 | integration: ZIP boundary file | so i can not push it ? | Claude |
+| M2 (Adala) | 2026-11-06 | docs: pull request | Copy the file into data\clean\<br><br>the PR i did ? | Claude |
+| M2 (Adala) | 2026-11-06 | docs: pull request | so i have to send the same PR to her or to wait emily to merge | Claude |
+| M2 (Adala) | 2026-11-06 | docs: message to teammate | member 3 asked me if i need anything from her or just the zip file sha sent | Claude |
+| M2 (Adala) | 2026-11-06 | integration: spatial join | Your next step is still the same: upload nyc_zip_boundaries.geojson to Colab and run the check cell from a few messages ago, then paste me the output. I’ll wait for it before the join itself. how ? | Claude |
+| M2 (Adala) | 2026-11-06 | integration: spatial join | where to upload | Claude |
+| M2 (Adala) | 2026-11-06 | docs: message to teammate | wait member3 sent me [pasted message from Member 3 asking for the final crash_clean.csv and three questions about open_data_crash_id, missing ZIPs and standardized dates omitted] what she means also member 6 sent me [pasted note from Member 6 about the construction tiers omitted] | Claude |
+| M2 (Adala) | 2026-11-06 | Planning: remaining work | so i what i have to do now i have to finish my part even for me or the things i have to share with others help me | Claude |
+| M2 (Adala) | 2026-11-06 | Planning: step-by-step mode | no do it with me step by step and tell me when to share others and when to ask others for any file i need in my part to finish it | Claude |
+| M2 (Adala) | 2026-11-06 | Planning: step-by-step mode | go [sent several times to move to the next step] | Claude |
+| M2 (Adala) | 2026-11-06 | integration: sharing files | so now i finish the part that i have to share next steps it just for me right ? | Claude |
+| M2 (Adala) | 2026-11-06 | docs: message to teammate | Final crash_clean.csv is ready: [Drive link]. 13,309 rows, one per crash. ZIP: 8,072 original, 4,057 recovered by spatial join, 1,180 missing. Borough: 45 recovered, 10 missing. Agreement of the spatial ZIP with the original ZIP is 91.9% (contract target was 95%). The disagreements are mostly crashes within a few feet of a ZIP border, which I’ll document as a limitation. Please rerun your integration [zip_year_integrated.csv] (you build it from my final file that i sent you(Final crash_clean.csv )) i sent it to m3 | Claude |
+| M2 (Adala) | 2026-11-06 | docs: pull request | before it m1 and m3 send this is not my bussnies right ? | Claude |
+| M2 (Adala) | 2026-11-06 | docs: pull request | how to check that will be send to emily | Claude |
+| M2 (Adala) | 2026-11-06 | cleaning: IQR and consistency checks | where ? | Claude |
+| M2 (Adala) | 2026-11-06 | docs: markdown | what is markdown? | Claude |
+| M2 (Adala) | 2026-11-06 | docs: prompt log | Two small things to check before you paste [pasted text from the previous Claude answer omitted] Prompt log (the brief requires it): add a row for each prompt you used in docs/prompt_log.md. We’ll do that together at the end. how? | Claude |
+| M2 (Adala) | 2026-11-06 | docs: prompt log | no no do not add any thing is this step important ? | Claude |
+| M2 (Adala) | 2026-11-06 | docs: prompt log | so skip this step (adding) and lets complete where we stop | Claude |
+| M2 (Adala) | 2026-11-06 | docs: notebook markdown | here? | Claude |
+| M2 (Adala) | 2026-11-06 | docs: notebook markdown | no need to put [pasted the dataset overview text from the previous Claude answer omitted] | Claude |
+| M2 (Adala) | 2026-11-06 | docs: notebook markdown | give exactly the text to copy and paste | Claude |
+| M2 (Adala) | 2026-11-06 | docs: notebook markdown | we will lose mark if i did not add it ? | Claude |
+| M2 (Adala) | 2026-11-06 | docs: notebook markdown | done i add it | Claude |
+| M2 (Adala) | 2026-11-06 | docs: notebook | File > Download > Download .ipynb. where to click | Claude |
+| M2 (Adala) | 2026-11-06 | docs: contributions | this file have to be in the submission ?because emily will submit all the requriments | Claude |
+| M2 (Adala) | 2026-11-06 | docs: notebook | i am talking about colab notebook | Claude |
+| M2 (Adala) | 2026-11-06 | docs: notebook | before i push any thing i will ask emily directly also look what i find | Claude |
+| M2 (Adala) | 2026-11-06 | docs: notebook | okey wait if m1 do lets do | Claude |
+| M2 (Adala) | 2026-11-06 | docs: notebook | Member2_Crash_Cleaning i removed the .ipynb when i renamed it | Claude |
+| M2 (Adala) | 2026-11-06 | docs: pull request | [pasted dir notebooks output omitted] i prefer send new PR even if PR13 still not merged | Claude |
+| M2 (Adala) | 2026-11-06 | docs: pull request | no no do not create new branch | Claude |
+| M2 (Adala) | 2026-11-07 | docs: pull request | emily did not merge PR13 i will send her not to merge untill i update it right ? | Claude |
+| M2 (Adala) | 2026-11-07 | docs: pull request | it shows this | Claude |
+| M2 (Adala) | 2026-11-07 | docs: contributions | Your row in docs/contributions.md. I haven’t seen it pushed. Tell me if it’s done. i can not understand | Claude |
+| M2 (Adala) | 2026-11-07 | docs: notebook | did i load SITRA i can not remember ? | Claude |
+| M2 (Adala) | 2026-11-07 | Planning: remaining work | okey i am just asking lets complete from where we stop | Claude |
+| M2 (Adala) | 2026-11-07 | docs: contributions | i will ask emily if she will do that or me (adding my name on the docs/contributions.md) | Claude |
+| M2 (Adala) | 2026-11-07 | Planning: remaining work | done so i just wait for m3 to send zip_year_integrated.csv is there any thing i have to add from my part to my branch to merge in the main as i told you emily do the submisssion not me so any missing in my part i will lose marks | Claude |
+| M2 (Adala) | 2026-11-07 | docs: prompt log | no no we will wait m3 to use the real one can we start with Prompt log rows in docs/prompt_log.md   The brief requires “prompt used in any step” in the deliverables   or wait to finish Q3 and Q4 | Claude |
+| M2 (Adala) | 2026-11-07 | docs: prompt log | no this one also we will did after m3 send the real data | Claude |
+| M2 (Adala) | 2026-11-07 | docs: prompt log | The prompt log what this step is ? | Claude |
+| M2 (Adala) | 2026-11-07 | cleaning: missing borough fix | FAIL “no missing borough that coordinates could fill”: those rows have coordinates, so ask Member 2 to fill them by spatial join and set borough_source. It’s a handful of rows, so a quick fix, but merge only after it’s fixed. emily sent me this what she means | Claude |
+| M2 (Adala) | 2026-11-07 | cleaning: missing borough fix | upload it here right? | Claude |
+| M2 (Adala) | 2026-11-07 | docs: pull request | emily sent me that she merged the old one before i update it and she told me to send the updated one in new PR | Claude |
+| M2 (Adala) | 2026-11-07 | docs: pull request | Type exactly :wq. The characters appear at the bottom left of the screen. where to type ? | Claude |
+| M2 (Adala) | 2026-11-07 | integration: sharing files | before send any new file to m3 i will wait emily to check it if correct or not | Claude |
+| M2 (Adala) | 2026-11-07 | integration: sharing files | zip_year_integrated.csv it will be wrong right ?because it builds depend on the old one ? | Claude |
+| M2 (Adala) | 2026-11-07 | docs: notebook | notebook keep it the same right?or also replace it after emily check it ? | Claude |
+| M2 (Adala) | 2026-11-07 | integration: sharing files | “PR #14 gave one crash a borough (missing to Queens). Please rerun the integration notebook on the updated crash_clean.csv and push the regenerated borough_month_integrated.csv and coverage_report.csv. The ZIP-by-year table shouldn’t change. [rest of Emily’s message omitted]” emiy send it to me that she will send it to m3 and she told me that she merged PR14 | Claude |
+| M2 (Adala) | 2026-11-07 | integration: sharing files | should i send the updated crash_clean.csv to m3 ?or she can find it from git emily already merged the PR14(the one that we update the csv file) | Claude |
+| M2 (Adala) | 2026-11-07 | integration: sharing files | i will send her to use the drive folder in case she prefer using like this instead of finding it on git | Claude |
+| M2 (Adala) | 2026-11-08 | chart: Q3 and Q4 | ok before Q3 and Q4 what we will use from the other's part (still waitting m3 to update after what i sent to her the updated crash_clean.csv) | Claude |
+| M2 (Adala) | 2026-11-08 | chart: Q3 and Q4 | heyy, i finished updating my integration using your corrected crash_clean.csv from PR #14. [rest of Member 3’s message omitted] can you confirm everything looks correct for your Q3 and Q4 now, and that you don't need any further changes from me? m3 sent | Claude |
+| M2 (Adala) | 2026-11-08 | chart: Q3 and Q4 | now did i need any files from m3 to start Q3Q4 or what ?wait emily to merge anything from m3 or no i can start | Claude |
+| M2 (Adala) | 2026-11-08 | chart: Q3 and Q4 | wait so we can start Q3Q4 now m3 told me that she the corrected still not merged (still in her PR )waiting for m4 to test should i wait her PR to be merged or what ? | Claude |
+| M2 (Adala) | 2026-11-08 | chart: Q3 and Q4 | wait step by step instructions i am confused now | Claude |
+| M2 (Adala) | 2026-11-08 | chart: Q3 and Q4 | q03.py, q04.py and tier_share.py <br><br>send them again correctly | Claude |
+| M2 (Adala) | 2026-11-09 | chart: Q3 and Q4 | emily merged m3's pr i want to sent you the corrected coverage_report.csv to start Q3 and Q4 correctly and clearly | Claude |
+| M2 (Adala) | 2026-11-09 | website: registering the charts | so should m4 know oe send him message or what you mean of this the three entries are in the message to Member 4. | Claude |
+| M2 (Adala) | 2026-11-09 | website: registering the charts | i can register in app.py emily sent me this is that mean no need to send to m4 ? | Claude |
+| M2 (Adala) | 2026-11-09 | website: registering the charts | ok what should send m4 now ? | Claude |
+| M2 (Adala) | 2026-11-09 | website: registering the charts | i will tell him to ignore my previous message because emily already allowed to do that right ? | Claude |
+| M2 (Adala) | 2026-11-09 | website: registering the charts | no emily said she can not me | Claude |
+| M2 (Adala) | 2026-11-09 | Planning: remaining work | done did i finish all my part now ? | Claude |
+| M2 (Adala) | 2026-11-09 | docs: notebook | the current notebook of my part should be fixed or correct ? | Claude |
+| M2 (Adala) | 2026-11-09 | docs: notebook | yess u can do this emily replayed on [my message to Emily about the empty M2 placeholders in master_notebook.ipynb omitted] | Claude |
+| M2 (Adala) | 2026-11-09 | notebook: Q3 and Q4 sections and prompt log | [pasted the Q10 (M5) section template and a screenshot of the Q11 section] do this for my Q3 and Q4 to send to emily (she will add it on master notebook)also emily asked us to [pasted Emily’s request for the AI prompt logs, with date, task, prompt and tool, omitted] | Claude |
+| M1 (Arwa)| 2026-11-05 | cleaning: shared ChatGPT conversation | [Conversation link; original prompts not yet transcribed] https://chatgpt.com/share/6af22d9b-0ec4-83ea-96cf-75e4027c76b1 | ChatGPT |
+| M1 (Arwa)| 2026-11-05 | cleaning: shared ChatGPT conversation | [Conversation link; original prompts not yet transcribed] https://chatgpt.com/share/6af22d26-baf0-83ea-add6-d2d57fc1ab57 | ChatGPT |
+| M1 (Arwa)| 2026-11-08 | chart: Q1/Q2 shared ChatGPT conversation | [Conversation link; original prompts not yet transcribed] https://chatgpt.com/share/6af22f41-2340-83ea-a198-4a4334dd8a4f | ChatGPT |
+| M1 (Arwa)| 2026-11-08 | chart: Q1/Q2 shared ChatGPT conversation | [Conversation link; original prompts not yet transcribed] https://chatgpt.com/share/6af22f79-3bb4-83ea-80fb-a46dbe006d3a | ChatGPT |
+| M1 (Arwa)| 2026-11-08 | Chart: Q1 and Q2 reference code | yes i see the code there | ChatGPT |
+| M1 (Arwa)| 2026-11-08 | Chart: Q1 and Q2 testing workflow | we dont need to put the code on colab first ? | ChatGPT |
+| M1 (Arwa)| 2026-11-08 | Chart: Q1 and Q2 code generation | yes i have it generate the code | ChatGPT |
+| M1 (Arwa)| 2026-11-08 | Chart: Q1 and Q2 testing | done | ChatGPT |
+| M1 (Arwa)| 2026-11-08 | Chart: reference implementation | [Pasted q09.py code as a reference for the team's chart structure and Plotly conventions; source code omitted from this table.] | ChatGPT |
+| M1 (Arwa)| 2026-11-08 | Chart: reference implementation | [Pasted q09.py code a second time while trying to provide the requested reference file; source code omitted from this table.] | ChatGPT |
+| M1 (Arwa)| 2026-11-08 | Chart: multi-dataset reference | [Pasted q11.py code to demonstrate the team's multi-dataset prepare() and make_fig() implementation; source code omitted from this table.] | ChatGPT |
+| M3 (Mariam)| 2026-11-04 | Planning: role identification | im member 3 | ChatGPT |
+| M3 (Mariam) | 2026-11-04 | Planning: responsibilities | so what am i supposed to do right now | ChatGPT |
+| M3 (Mariam) | 2026-11-04 | Planning: development environment | i will use colab | ChatGPT |
+| M3 (Mariam) | 2026-11-04 | Planning: parallel workflow | [Pasted the team's Phase 1 parallel-work plan, explaining the responsibilities of all six members.] | ChatGPT |
+| M3 (Mariam)| 2026-11-04 | Planning: dependencies | so do i have to wait for someone | ChatGPT |
+| M3 (Mariam)| 2026-11-04 | Planning: implementation steps | okay now tell me what to do before starting to code | ChatGPT |
+| M3 (Mariam)| 2026-11-04 | Planning: dependencies | so for me to start my part i have to wait for member 1 and 2 | ChatGPT |
+| M3 (Mariam)| 2026-11-04 | Integration: Colab notebook structure | this is my layout so far: [Pasted Python imports, CSV loading code, dataset inspection, and eight notebook section headings.] | ChatGPT |
+| M3 (Mariam)| 2026-11-04 | Integration: raw datasets | DOB_NOW__Build_–_Job_Application_Filings_20261104 and Serious_Injury_Response,_Tracking_&_Analysis_Program_(SIRTA)_20261104 these are my file names | ChatGPT |
+| M3 (Mariam)| 2026-11-04 | Integration: cleaned Housing input | member 1 sent me this: [Pasted Member 1's cleaning update.] and i got sent the clean data, do i remove the old csv files i have and upload the clean data? | ChatGPT |
+| M3 (Mariam)| 2026-11-04 | Integration: ZIP boundaries | [Pasted Member 2's request for nyc_zip_boundaries.geojson and questions about ZIP and borough fields.] member 2 is asking for this? | ChatGPT |
+| M3 (Mariam)| 2026-11-04 | Integration: team dependencies | i dont understand what am i supposed to give member 2 | ChatGPT |
+| M3 (Mariam)| 2026-11-04 | Integration: SIRTA ownership | the sirta file is supposed to be sent by who? | ChatGPT |
+| M3 (Mariam)| 2026-11-04 | Integration: preliminary crash data | member 2 gave me file crash clean prelim | ChatGPT |
+| M3 (Mariam)| 2026-11-04 | EDA: dataset inspection | heres the output HOUSING DATASET [Pasted dataset shape (571131, 103) and complete column list.] | ChatGPT |
+| M3 (Mariam)| 2026-11-04 | Integration: notebook execution | what do i do now? i ran ALL cells | ChatGPT |
+| M3 (Mariam)| 2026-11-04 | Planning: dependencies | do i need to ask any member for anything? | ChatGPT |
+| M3 (Mariam)| 2026-11-04 | Integration: geographic data | okay so whats the zip boundary file? cus i uploaded only the file name Member3_Integration.ipynb | ChatGPT |
+| M3 (Mariam)| 2026-11-04 | Planning: next steps | so now what do i do besides wait for everyones answer to my questions | ChatGPT |
+| M3 (Mariam)| 2026-11-06 | Integration: cleaned Housing data | member 1 gave me their cleaned data | ChatGPT |
+| M3 (Mariam)| 2026-11-06 | Integration: schema validation | [Pasted Member 4's feedback about missing year, zip naming, wide h_* and t_* columns, required integrated tables, and data contract compliance.] member 4 sent this | ChatGPT |
+| M3 (Mariam)| 2026-11-07 | Integration: final crash data | [Pasted Member 2's final crash_clean.csv statistics, ZIP recovery information, validation details, and request for zip_year_integrated.csv and coverage_report.csv.] | ChatGPT |
+| M3 (Mariam)| 2026-11-07 | Integration: validation | heres the output from section 1 to 6 | ChatGPT |
+| M3 (Mariam)| 2026-11-07 | Integration: team communication | what do i tell member 2 after im done with all this | ChatGPT |
+| M3 (Mariam)| 2026-11-08 | Integration: troubleshooting year coverage | [Pasted Member 4's feedback that housing measures were zero for 2024 and 2025 and requested checks of the source Housing file, date filtering, and year joins.] | ChatGPT |
+| M3 (Mariam)| 2026-11-08 | Integration: pull request coordination | [Pasted Member 2's message that corrected coverage_report.csv and borough_month_integrated.csv were on the integration branch but not main, and asked which PR should be merged.] member 2 sent this | ChatGPT |
+| M3 (Mariam)| 2026-11-08 | Integration: final consistency checks | [Pasted Member 4's website testing results and differences in borough_month_integrated.csv and coverage_report.csv.] member 4 is asking this | ChatGPT |
