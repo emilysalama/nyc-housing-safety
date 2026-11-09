@@ -6,7 +6,7 @@ from dash import Dash, html, dcc, Input, Output, State
 
 from src.filters import filter_df, ALL
 from src.dummy_data import BOROUGHS, H_COLS, T_COLS
-from src.charts import q01, q02, q03, q04, q07, q08, q09, q10, q11, q12
+from src.charts import q01, q02, q03, q04, q05, q06, q07, q08, q09, q10, q11, q12
 from src.theme import style_fig
 from src.search import parse_query
 
@@ -83,6 +83,30 @@ CHARTS = [
         filtered=True,
         fn=lambda T, h, t: q04.make_fig(T["zip_year"], q11_metric(h)),
         hint=q04.make_caption()
+    ),
+    dict(
+        id="q05",
+        title="Q5 Monthly Housing and SIRTA patterns by borough",
+        needs=["borough_month"],
+        filtered=True,
+        fn=lambda T, h, t: q05.make_fig(T["borough_month"]),
+        hint="Monthly Housing filings and serious crashes, indexed to each borough's average."
+    ),
+    dict(
+        id="q05lag",
+        title="Q5 Monthly lag-correlation analysis",
+        needs=["borough_month"],
+        filtered=True,
+        fn=lambda T, h, t: q05.make_lag_fig(T["borough_month"]),
+        hint="Correlations for shifts of -3 to +3 months. Exploratory, not causal."
+    ),
+    dict(
+        id="q06",
+        title="Q6 Housing activity and serious crash residuals by ZIP",
+        needs=["zip_year"],
+        filtered=True,
+        fn=lambda T, h, t: q06.make_fig(T["zip_year"]),
+        hint="ZIP-level regression and largest positive/negative residuals. Descriptive, not causal."
     ),
     dict(id="q07", title="Q7 Stability by year", needs=["zip_year"], filtered=True,
          fn=lambda T, h, t: q07.make_fig(T["zip_year"], h, t),
