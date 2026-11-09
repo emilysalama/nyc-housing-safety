@@ -6,7 +6,7 @@ from dash import Dash, html, dcc, Input, Output, State
 
 from src.filters import filter_df, ALL
 from src.dummy_data import BOROUGHS, H_COLS, T_COLS
-from src.charts import q01, q02, q07, q08, q09, q10, q11, q12
+from src.charts import q01, q02, q03, q04, q07, q08, q09, q10, q11, q12
 from src.theme import style_fig
 from src.search import parse_query
 
@@ -60,6 +60,30 @@ CHARTS = [
          needs=["crashes", "sites"], filtered=True,
          fn=lambda T, h, t: q02.make_fig(T),
          hint="Compares the distance from serious street crashes to the nearest New Building and Full Demolition sites. Highway crashes are excluded. Percentages are calculated separately for each site type."),
+    dict(
+        id="q03",
+        title="Q3 Are crashes in construction-heavy ZIPs more often fatal?",
+        needs=["zip_year"],
+        filtered=True,
+        fn=lambda T, h, t: q03.make_fig(T["zip_year"], q11_metric(h)),
+        hint=q03.make_caption()
+    ),
+    dict(
+        id="q03b",
+        title="Q3 check: the same comparison inside each borough",
+        needs=["zip_year"],
+        filtered=True,
+        fn=lambda T, h, t: q03.make_borough_fig(T["zip_year"], q11_metric(h)),
+        hint="Compares fatal crash shares by construction tier within each borough."
+    ),
+    dict(
+        id="q04",
+        title="Q4 Do construction-heavy ZIPs have more repeat-danger crashes?",
+        needs=["zip_year"],
+        filtered=True,
+        fn=lambda T, h, t: q04.make_fig(T["zip_year"], q11_metric(h)),
+        hint=q04.make_caption()
+    ),
     dict(id="q07", title="Q7 Stability by year", needs=["zip_year"], filtered=True,
          fn=lambda T, h, t: q07.make_fig(T["zip_year"], h, t),
          hint="Each cell compares ZIP codes within one borough and year. Blue means ZIPs with more filings also had more crashes; orange means the opposite."),
