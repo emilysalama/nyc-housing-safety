@@ -101,3 +101,15 @@ The project requires us to record every prompt we used at any step. Add a row ea
 | M6 (Emily) | 2026-11-08 | chart: Q9 | okay all three are fine but im still concerned about the q9 chart not appearing on the browser. i want to make sure theres nothing wrong before merging | Claude |
 | M6 (Emily) | 2026-11-08 | chart: Q9 | [attached three screenshots of maptest.html, q09_whitebg.html and q09.html; pasted the Q9 figure and geojson check output; no typed text] | Claude |
 | M6 (Emily) | 2026-11-08 | docs: prompt log | could you do this for me? or is this what ive done already from to your previous message [excerpt of Claude's previous reply attached] | Claude |
+| M4 (AhmedSameh16003382) | 2026-11-08 | website: git branch | okay just a question, did the stuff i do before finding out about my branch being outdated did they carry over to this pr? | Claude |
+| M4 (AhmedSameh16003382) | 2026-11-08 | website: dummy data | so what is the current code how does it handle the dummy data | Claude |
+| M4 (AhmedSameh16003382) | 2026-11-08 | chart: Q7 coverage panel | (pasted the first lines of coverage_report.csv) | Claude |
+| M4 (AhmedSameh16003382) | 2026-11-08 | chart: Q7 coverage panel | generate the whole code | Claude |
+| M4 (AhmedSameh16003382) | 2026-11-08 | chart: Q7 coverage panel | (attached screenshots of the coverage chart to fix the legend and caption layout) | Claude |
+| M4 (AhmedSameh16003382) | 2026-11-08 | website: add chart to app | (pasted app/app.py so the coverage panel could be added to the CHARTS list) | Claude |
+| M4 (AhmedSameh16003382) | 2026-11-08 | website: search mode | is this search mode? | Claude |
+| M4 (AhmedSameh16003382) | 2026-11-08 | chart: Q8 justification | (pasted src/charts/q08.py) | Claude |
+| M4 (AhmedSameh16003382) | 2026-11-08 | integration: testing M3 files | before u do that lets just do this heyy, just wanted to update you that member 2 made one final correction to crash_clean.csv (pasted Member 3's message asking me to test the corrected files on the website) | Claude |
+| M4 (AhmedSameh16003382) | 2026-11-08 | integration: testing M3 files | (pasted the diff output showing the h_* columns changed in borough_month_integrated.csv) | Claude |
+| M4 (AhmedSameh16003382) | 2026-11-08 | docs: notebook | lets do my notebook tell me what to do | Claude |
+| M4 (AhmedSameh16003382) | 2026-11-09 | docs: contributions and prompt log | yes | Claude |
